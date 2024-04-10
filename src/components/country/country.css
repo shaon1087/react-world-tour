@@ -1,0 +1,15 @@
+.country{
+    border: 3px solid rgb(160, 126, 126);
+    margin: 15px;
+    padding: 15px;
+    border-radius: 15px;
+    
+}
+.visited{
+    background-color:red;
+    color: #fff;
+}
+.non-visited{
+    background-color: blueviolet;
+    color: black;
+}
