@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState } from 'react';
 import './country.css'
-const Country = ({country,handleVisitedCountry}) => {
+const Country = ({country,handleVisitedCountry,handleVisitedFlag}) => {
     const {name,capital,population,flags,area,cca3} = country;
 
     const [visited, setVisited] = useState(false);
@@ -18,7 +18,11 @@ const Country = ({country,handleVisitedCountry}) => {
             <p>population : {population} </p>
             <p>area: {area}</p>
             <p>code: <small>{cca3}</small></p>
-            <button onClick={()=>handleVisitedCountry(country)}>Mark Visited</button><br/><br/>
+            <button onClick={()=>handleVisitedCountry(country)}>Mark Visited</button>
+            <br/><br/>
+            <button onClick={() => handleVisitedFlag(country.flags.png)}>Add Flag</button>
+            <br />
+            <br />
             <button onClick={handleVisited}>{visited ? 'visited' : 'Going'}</button>
             { visited ? ' i have visited this country' : 'i have not visited this country'}
         </div>
