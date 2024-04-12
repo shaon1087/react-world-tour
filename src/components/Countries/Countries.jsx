@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import './countries.css'
 import Country from "../country/Country";
+import { addToLS } from "../../utilities/local";
 
 const Countries = () => {
     const [Countries,setCountries] = useState([]);
@@ -17,10 +18,11 @@ const Countries = () => {
 
         const newVisitedCountry = [...visitedCountries,country]
         setVisitedCountries(newVisitedCountry);
-    }
+        addToLS(country.id)
+        
 
     const handleVisitedFlag = flag => {
-        console.log('flag');
+
        const newVisitedFlag = [...visitedFlags, flag]
        setVisitedFlags(newVisitedFlag);
     }

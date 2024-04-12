@@ -1,13 +1,15 @@
 /* eslint-disable react/prop-types */
 import { useState } from 'react';
 import './country.css'
+
 const Country = ({country,handleVisitedCountry,handleVisitedFlag}) => {
-    const {name,capital,population,flags,area,cca3} = country;
+    const {name,capital,population,flags,area,cca3,id} = country;
 
     const [visited, setVisited] = useState(false);
 
     const handleVisited=()=>{
         setVisited(!visited);
+        
     }
  
     return (
